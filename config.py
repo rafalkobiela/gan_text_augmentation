@@ -7,7 +7,7 @@ from time import strftime, localtime
 
 class Config():
 
-    def __init__(self):
+    def __init__(self, samples_num):
         self.if_test = False
         self.CUDA = True
         self.if_save = True
@@ -29,14 +29,14 @@ class Config():
         self.loss_type = 'rsgan'  # standard, JS, KL, hinge, tv, LS, rsgan (for RelGAN)
         self.vocab_size = 5000  # oracle: 5000, coco: 6613, emnlp: 5255, amazon_app_book: 6418, mr15: 6289
         self.max_seq_len = 20  # oracle: 20, coco: 37, emnlp: 51, amazon_app_book: 40
-        self.ADV_train_epoch = 2000  # SeqGAN, LeakGAN-200, RelGAN-3000
+        self.ADV_train_epoch = 100  # SeqGAN, LeakGAN-200, RelGAN-3000
         self.extend_vocab_size = 0  # plus test data, only used for Classifier
 
         self.temp_adpt = 'exp'  # no, lin, exp, log, sigmoid, quad, sqrt
         self.temperature = 1
 
         # ===Basic Train===
-        self.samples_num = 10000  # 10000, mr15: 2000,
+        self.samples_num = samples_num  # 10000, mr15: 2000,
         self.MLE_train_epoch = 150  # SeqGAN-80, LeakGAN-8, RelGAN-150
         self.PRE_clas_epoch = 10
         self.inter_epoch = 15  # LeakGAN-10
