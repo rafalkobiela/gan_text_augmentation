@@ -3,9 +3,8 @@ from gans.seqgan_instructor import SeqGANInstructor
 from utils.text_process import text_process, load_test_dict
 
 
-def main(samples_num):
-
-    opt = Config(samples_num)
+def main():
+    opt = Config()
 
     if opt.if_real_data:
         opt.max_seq_len, opt.vocab_size = text_process('data/' + opt.dataset + '.txt')
@@ -16,6 +15,9 @@ def main(samples_num):
 
 
 if __name__ == "__main__":
-    samples_num = 10000
-    for i in range(500, 5000, 100):
-        main(i)
+
+    for i in range(500, 5000, 400):
+        with open("num_samples.txt", "w") as f:
+            f.write(str(i))
+
+        main()

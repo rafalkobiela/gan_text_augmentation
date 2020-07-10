@@ -5,9 +5,13 @@ import torch
 from time import strftime, localtime
 
 
-class Config():
+class Config:
 
-    def __init__(self, samples_num):
+    def __init__(self):
+
+        with open("num_samples.txt", "r") as f:
+            samples_num = int(f.read())
+
         self.if_test = False
         self.CUDA = True
         self.if_save = True
@@ -24,7 +28,7 @@ class Config():
         self.dis_init = 'uniform'  # normal, uniform, truncated_normal
 
         self.if_real_data = True  # if use real data
-        self.dataset = 'image_coco'  # oracle, image_coco, emnlp_news, amazon_app_book, mr15
+        self.dataset = 'twitter'  # oracle, image_coco, emnlp_news, amazon_app_book, mr15
         self.model_type = 'vanilla'  # vanilla, RMC (custom)
         self.loss_type = 'rsgan'  # standard, JS, KL, hinge, tv, LS, rsgan (for RelGAN)
         self.vocab_size = 5000  # oracle: 5000, coco: 6613, emnlp: 5255, amazon_app_book: 6418, mr15: 6289
