@@ -16,8 +16,7 @@ def main():
 
 if __name__ == "__main__":
 
-    for i in range(500, 5000, 400):
+    for i in range(4600, 100, -400):
+        main()
         with open("num_samples.txt", "w") as f:
             f.write(str(i))
-
-        main()
