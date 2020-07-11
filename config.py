@@ -28,7 +28,7 @@ class Config:
         self.dis_init = 'uniform'  # normal, uniform, truncated_normal
 
         self.if_real_data = True  # if use real data
-        self.dataset = 'twitter'  # oracle, image_coco, emnlp_news, amazon_app_book, mr15
+        self.dataset = 'image_coco'  # oracle, image_coco, emnlp_news, amazon_app_book, mr15, twitter
         self.model_type = 'vanilla'  # vanilla, RMC (custom)
         self.loss_type = 'rsgan'  # standard, JS, KL, hinge, tv, LS, rsgan (for RelGAN)
         self.vocab_size = 5000  # oracle: 5000, coco: 6613, emnlp: 5255, amazon_app_book: 6418, mr15: 6289

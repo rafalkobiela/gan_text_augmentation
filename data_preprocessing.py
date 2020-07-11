@@ -20,4 +20,4 @@ i = 0
 for i in range(pos.shape[0]):
     pos.iloc[i, 1] = " ".join(filter(lambda x: x[0] != '@', pos.iloc[i, 1].split()))
 
-pos["text"].to_csv("data/twitter.txt", index=False, header=False)
+pos["text"].to_csv("data/twitter_base.txt", index=False, header=False)
